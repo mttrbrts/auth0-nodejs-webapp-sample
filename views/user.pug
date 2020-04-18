@@ -3,9 +3,12 @@ extends layout
 block content
   .w3-card-4
     h1 Welcome #{user.nickname}
-    img(src=user.picture)
-    h2 User profile
-    p This is the content of <code>req.user</code>.
-    p Note: <code>_raw</code> and <code>_json</code> properties have been ommited.
-    pre
-      code #{userProfile}
+    form(id='plaid-link-form')
+  script(
+    src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"
+    data-client-name="My App"
+    data-form-id="plaid-link-form"
+    data-key="616e9bbdec7af640268076e9bab577"
+    data-product="auth"
+    data-env="sandbox"
+  )
